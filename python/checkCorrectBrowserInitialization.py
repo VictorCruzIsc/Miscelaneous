@@ -56,4 +56,8 @@ def main():
         print "ERROR"
 
 if __name__ == "__main__":
+<<<<<<< HEAD
     main()
+=======
+    main()
+>>>>>>> 3d89851ff08afe750fa5ead0feed5baf0678cdbb
