@@ -1,0 +1,6 @@
+Desarollador: Nelson Victor Cruz Hernandez
+
+El archivo con codigo fuente check_border_parallel.c
+
+Para definir el numero de procesadores que se ejecutaran, dentro del arhivo modificar la macro NUM_THREADS
+La imagen que se va a procesar se llama "imagen.bmp" de ser necesario modificarlo, cmabiarlo en la variable filename
