@@ -2,6 +2,7 @@
 
 using namespace std;
 
+// Abstract class
 class Polygon{
 	protected:
 		int _width;
@@ -15,10 +16,13 @@ class Polygon{
 			cout << "Calling Polygon parametrized constructor, with values for width and heigth" << endl;
 		}
 
+		// Pure virtual functions: Need to be implemented in subclasses
 		virtual double getArea() = 0;
 		virtual double getPerimeter() = 0;
 };
 
+// Class that inherits from Polygon, implements pure virtual methods.
+// This class may have instances
 class Rectangle:public Polygon{
 	public:
 		Rectangle(){
@@ -37,6 +41,10 @@ class Rectangle:public Polygon{
 		}
 };
 
+// Class that inherits from Polygon, implements pure virtual methods.
+// Does not override getArea() or getPerimeter() so any object that use those methods
+// will call Rectangle implementation
+// This class may have instances
 class Square:public Rectangle{
 	public:
 		Square(){
@@ -47,6 +55,9 @@ class Square:public Rectangle{
 		}
 };
 
+// Class that inherits from Polygon, implements just one pure virtual funtion
+// pure virtual function getArea() needs to be implemented and is not so it will not cause compilation errors
+// but no instances can be called due pure virtual method behavior is not overwritten.
 class Triangle:public Polygon{
 	protected:
 		double _sideA;
@@ -63,13 +74,14 @@ class Triangle:public Polygon{
 		Triangle(double a, double b, double c):_sideA(a), _sideB(b), _sideC(c), Polygon(a, b, 3){
 			cout << "Calling Triangle parametrized constructor width:" << _width << " heigth: " << _heigth << endl;
 		} 
-
 		double getPerimeter(){
 			cout << "Triangle getPerimeter()" << endl;
 			return (_sideA + _sideB + _sideC);
 		}
 };
 
+// Class that inherits from Triangle, implements only getArea pure virtual method.
+// This class may have instances
 class RectangularTriangle:public Triangle{	
 	public:
 		RectangularTriangle(){
@@ -79,7 +91,6 @@ class RectangularTriangle:public Triangle{
 			cout << "Calling RectangularTriangle parametrized constructor" << endl;
 			
 		}
-
                 double getArea(){
                         cout << "Rectangular Triangle getArea()" << endl;
                         return (_width * _heigth)/2;
