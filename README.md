@@ -10,3 +10,7 @@ It has solutions for algorithms problems, architecture problems and some bash sc
 automatization.
 
 Many of the problems are solved in C or C++ but the approaches are the same.
+
+
+
+ZZZZ
