@@ -32,4 +32,13 @@ int main(){
 
 	cout << "firstMap key: 1 " << firstMap[1] << endl;
 
+	if(thirdMap->find(6) == thirdMap->end()){
+		cout << "END" << endl;
+		(*thirdMap)[6] = 8;
+	}else{
+		cout << "OK " << (*thirdMap)[3]  << endl;
+	}
+
+	cout << "thirdMap key: 6 " << thirdMap->operator[](6) << endl;
+
 }
